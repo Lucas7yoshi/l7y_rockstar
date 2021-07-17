@@ -7,6 +7,15 @@ RegisterCommand("rsstart", function()
     end
 end)
 
+RegisterCommand("rsactionreplay", function()
+    if (IsRecording()) then
+        SendMsg("Already recording!")
+    else
+        SendMsg("Starting action replay")
+        StartRecording(0)
+    end
+end)
+
 RegisterCommand("rsstop", function()
     if (IsRecording()) then
         StopRecordingAndSaveClip()
